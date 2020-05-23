@@ -1,1 +1,31 @@
-<p>people-list works!</p>
+<app-navbar></app-navbar>
+<div class="container my-4">
+    <h1>People list</h1>
+    <div *ngIf="peopleList.length == 0"  class="alert alert-warning">No person found</div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Firstname</th>
+            <th scope="col">Username</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let people of peopleList">
+            <td>{{people.id}}</td>
+            <td>{{people.name}}</td>
+            <td>{{people.username}}</td>
+            <td>{{people.phone}}</td>
+            <td>
+              <button type="button" class="btn btn-primary mx-2">Details</button>
+              <button type="button" class="btn btn-danger mx-2" (click)="Delete(person)">Delete</button>
+              <button type="button" class="btn btn-warning mx-2">Update</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+<hr>
+<app-footer></app-footer>

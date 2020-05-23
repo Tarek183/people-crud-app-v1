@@ -1,0 +1,13 @@
+<div class="container"> 
+    <p>hello  {{name}} !</p>
+    <img [src]="urlimage" alt="Angular logo" width="1000px">
+    <hr>
+    <button (click)="hello (name)" class="btn btn-info">Click</button>
+    <hr>
+    <ul *ngFor="let bookname of Bookslist">
+        <li>{{bookname}}</li>
+    </ul>
+    <div *ngIf="myCondition">Simple text</div>
+    <div *ngIf="Bookslist.length == 0" class="alert alert-warning">No books found</div>
+</div>
+
